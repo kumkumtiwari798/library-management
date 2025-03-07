@@ -1,0 +1,110 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="book-container">
+    <div class="book-image">
+        <img src="{{ image }}" alt="{{ title }}">
+    </div>
+
+    <div class="book-details">
+        <h1>{{ title }}</h1>
+        <h3>By {{ author }}</h3>
+
+        <p class="status 
+            {% if status == 'Available' %} available 
+            {% elif status == 'Issued' %} issued 
+            {% endif %}">
+            {{ status }}
+        </p>
+
+        <p><strong>Publisher:</strong> {{ publisher }}</p>
+        <p><strong>ISBN:</strong> {{ isbn }}</p>
+
+        <div class="book-description">
+            {{ description }}
+        </div>
+        <a href="/book-transaction" class="booktr">Book</a>
+    </div>
+</div>
+
+<style>
+    .book-container {
+    display: flex;
+    gap: 20px;
+    max-width: 800px;
+    min-height: 350px; 
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #f9f9f9;
+    align-items: flex-start; 
+    }
+
+.book-image {
+    flex-shrink: 0;
+}
+
+.book-image img {
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.book-details {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    flex: 1;
+}
+
+.book-details h1 {
+    font-size: 20px;
+    margin: 0; 
+}
+
+.book-details h3 {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.status {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.available {
+    color: green;
+}
+
+.issued {
+    color: red;
+}
+
+.book-description {
+    margin-top: 10px;
+    font-size: 14px;
+}
+.booktr {
+    display: inline-block;
+    padding: 8px 25px;
+    background: #000dff; /* Blue Background */
+    color: white; /* White Text */
+    text-decoration: none; /* Remove Underline */
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px; /* Rounded Corners */
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.booktr:hover {
+    background: #6e00b3; /* Darker Blue on Hover */
+}
+</style>
+
+{% endblock %}

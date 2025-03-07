@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book World</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        html{
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 400;
+        }
+        .auth-buttons a {
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        .sign-in {
+            color: #333;
+        }
+        .get-started {
+            background: black;
+            color: white;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            padding: 50px 10%;
+            gap: 40px; /* कम किया गया गैप */
+        }
+        .hero-text {
+            max-width: 480px;
+        }
+        .hero-text h1 {
+            font-size: 42px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .hero-text .description {
+            font-size: 16px;
+            font-weight: 300;
+        }
+        .search-button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #fff;
+            border: 1px solid #333;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .hero-image img {
+            width: 350px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            .hero-text {
+                max-width: 100%;
+            }
+            .hero-image img {
+                width: 80%;
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+            nav ul {
+                padding: 10px 0;
+            }
+            .hero {
+                padding: 30px;
+            }
+            .hero-text h1 {
+                font-size: 36px;
+            }
+            .hero-image img {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">BookWorld</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Store</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <a href="http://127.0.0.1:8004/library-member-web-form/new" class="sign-in">Sign in</a>
+            <a href="http://127.0.0.1:8004/book-transaction/new" class="get-started">Get Started</a>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-text">
+            <p class="tagline">⭐ Start your reading journey today</p>
+            <h1>Where every page is a new Adventure</h1>
+            <p class="description">From classics to contemporary, our bookstore offers a wide selection of books to suit every taste and interest. Start exploring our shelves today and uncover your next literary gem.</p>
+            <a href="http://127.0.0.1:8004/route"><button class="search-button">🔍 Search Books</button></a>
+        </div>
+        <div class="hero-image">
+            <img src="https://new.adultliteracy.ac.nz/wp-content/uploads/2024/08/Literacy-1000x675.png" alt="Stack of books">
+        </div>
+    </section>
+</body>
+</html>

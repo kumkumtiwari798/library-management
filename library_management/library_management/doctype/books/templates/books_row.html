@@ -1,0 +1,47 @@
+<div class="book-row">
+    <div class="book-image">
+        <a href="/{{ doc.route | e }}">
+            <img src="{{ doc.image }}" alt="{{ doc.title or doc.name | e }}">
+        </a>
+    </div>
+
+    <div class="book-details">
+        <h3>
+            <a href="/{{ doc.route | e }}">{{ doc.title or doc.name | e }}</a>
+        </h3>
+        <p>By <strong>{{ doc.author }}</strong></p>
+    </div>
+</div>
+
+<style>
+    .book-row {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .book-image img {
+        width: 80px;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .book-details h3 {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .book-details a {
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    .book-details a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+
